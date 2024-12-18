@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Toko Baju Kekinian</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+/* Navbar */
+header {
+    background: #f0768b;
+    color: white;
+    padding: 1rem;
+}
+
+nav .logo h2 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+nav ul {
+    list-style-type: none;
+    float: right;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    background: #f0768b;
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+}
+
+.hero p {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+}
+
+/* Products Section */
+.products {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.products h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.product-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    background: #ff69b4;
+    padding: 1.5rem;
+    margin: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product-card h3 {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+}
+
+.product-card p {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.product-card button {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.product-card button:hover {
+    background-color: #e64a19;
+}
+
+/* Contact Section */
+.contact {
+    padding: 4rem 2rem;
+    background: #ffb8c6;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #ffb8c6;
+    color: black;
+    margin-top: 2rem;
+}
+    </style>
+</head>
+<body>
+    <script type="text/JavaScript">
+       let cartCount = 0;
+
+// Menambahkan produk ke keranjang
+document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', () => {
+        cartCount++;
+        document.querySelector('nav ul li a[href="#cart"]').textContent = `Keranjang (${cartCount})`;
+    });
+});
+
+    </script>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h2>Toko Baju</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Beranda</a></li>
+                <li><a href="#products">Produk</a></li>
+                <li><a href="#contact">Kontak</a></li>
+                <li><a href="#cart">Keranjang (0)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Temukan Baju Terbaru untuk Penampilan Kekinian</h1>
+        <p>Belanja mudah, harga terjangkau, hanya di Toko nna's style</p>
+    </section>
+
+    <!-- Product Section -->
+    <section id="products" class="products">
+        <h2>Produk Kami</h2>
+        <div class="product-container">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="baju1 (1).jpg" alt="Baju Casual">
+                <h3>Baju Casual</h3>
+                <p>Rp 150.000</p>
+                <button class="add-to-cart">Tambah ke Keranjang</button>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="baju2.jpg" alt="Baju Formal">
+                <h3>Baju Formal</h3>
+                <p>Rp 200.000</p>
+                <button class="add-to-cart">Tambah ke Keranjang</button>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="polo.jpg" alt="Baju Olahraga">
+                <h3>Baju Olahraga</h3>
+                <p>Rp 120.000</p>
+                <button class="add-to-cart">Tambah ke Keranjang</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Kontak Kami</h2>
+        <p>Untuk pertanyaan lebih lanjut, silakan hubungi kami di:</p>
+        <p>Email: nna's_Style@gmail.com</p>
+        <p>Telp: +628899534131</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Toko Baju Kekinian. Semua hak cipta dilindungi.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
